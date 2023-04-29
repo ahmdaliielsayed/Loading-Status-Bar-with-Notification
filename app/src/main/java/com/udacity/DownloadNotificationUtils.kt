@@ -19,7 +19,10 @@ class DownloadNotificationUtils(private val context: Context, private val lifecy
     fun notify(fileName: String, downloadStatus: DownloadStatus) {
         if (lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)) {
             Log.d("Tag_Download", "Notifying with a Toast. Lifecycle is resumed")
-            Toast.makeText(context, context.getString(R.string.download_completed), Toast.LENGTH_LONG).show()
+            when (downloadStatus) {
+                DownloadStatus.SUCCESSFUL -> Toast.makeText(context, context.getString(R.string.download_completed), Toast.LENGTH_LONG).show()
+                else -> Toast.makeText(context, context.getString(R.string.download_failed), Toast.LENGTH_LONG).show()
+            }
         }
         with(context.applicationContext) {
             getNotificationManager().run {
