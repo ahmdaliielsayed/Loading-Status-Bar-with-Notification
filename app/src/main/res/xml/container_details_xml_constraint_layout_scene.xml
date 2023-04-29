@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@+id/end"
+        app:constraintSetStart="@id/start"
+        app:duration="2500">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@+id/file_name_label_text" />
+            <KeyAttribute
+                android:translationY="80dp"
+                app:framePosition="0"
+                app:motionTarget="@+id/file_name_label_text" />
+
+            <KeyAttribute
+                android:translationX="30dp"
+                app:framePosition="20"
+                app:motionTarget="@+id/file_name_text" />
+            <KeyAttribute
+                android:translationX="160dp"
+                app:framePosition="0"
+                app:motionTarget="@+id/file_name_text" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@+id/download_status_image" />
+
+            <KeyAttribute
+                android:alpha="0"
+                app:framePosition="0"
+                app:motionTarget="@+id/download_status_label_text" />
+
+            <KeyAttribute
+                android:translationX="100dp"
+                app:framePosition="0"
+                app:motionTarget="@+id/download_status_text" />
+            <KeyAttribute
+                android:translationX="130dp"
+                app:framePosition="35"
+                app:motionTarget="@+id/download_status_text" />
+            <KeyAttribute
+                android:translationX="0dp"
+                app:framePosition="74"
+                app:motionTarget="@+id/download_status_text" />
+
+            <KeyAttribute
+                android:translationX="90dp"
+                app:framePosition="0"
+                app:motionTarget="@+id/btnOk" />
+            <KeyAttribute
+                android:translationY="30dp"
+                app:framePosition="0"
+                app:motionTarget="@+id/btnOk" />
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+
+    </ConstraintSet>
+</MotionScene>
