@@ -31,8 +31,6 @@ class LoadingButton @JvmOverloads constructor(
     private var currentBtnAnimationValue = 0f
     private var currentProgressAnimationValue = 0f
 
-    private val valueAnimator = ValueAnimator()
-
     private var buttonDefaultBackgroundColor = 0
     private var buttonBackgroundColor = 0
     private var buttonDefaultText: CharSequence = ""
@@ -62,7 +60,7 @@ class LoadingButton @JvmOverloads constructor(
         style = Paint.Style.FILL
     }
 
-    private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { property, oldState, newState ->
+    private var buttonState: ButtonState by Delegates.observable<ButtonState>(ButtonState.Completed) { _, _, newState ->
         when (newState) {
             ButtonState.Loading -> {
                 btnText = buttonText.toString()

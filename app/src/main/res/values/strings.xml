@@ -24,5 +24,6 @@
     <string name="file_name">File name:</string>
     <string name="download_status_content_description">Download status</string>
     <string name="download_status">Status:</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
+    <string name="loading_btn">Loading Button</string>
 </resources>
