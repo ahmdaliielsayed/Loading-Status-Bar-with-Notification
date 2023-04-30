@@ -56,7 +56,7 @@ const val notification_channel_description = "loading_status"
 const val NOTIFICATION_REQUEST_CODE = 1
 
 fun createDownloadStatusChannel(context: Context) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+    ifSupportsOreo {
         val notificationChannel = NotificationChannel(
             notification_channel_id,
             notification_channel_name,
@@ -75,6 +75,12 @@ fun createDownloadStatusChannel(context: Context) {
             NotificationManager::class.java
         )
         notificationManager.createNotificationChannel(notificationChannel)
+    }
+}
+
+fun ifSupportsOreo(doSomething: () -> Unit) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        doSomething()
     }
 }
 
